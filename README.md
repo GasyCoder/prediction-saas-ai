@@ -1,59 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Predictly AI
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Predictly AI** est une plateforme SaaS de prédiction avancée qui utilise l'intelligence artificielle pour analyser les données collectées via des questionnaires dynamiques.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Fonctionnalités principales
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Questionnaires Dynamiques** : Création et gestion de questionnaires structurés par catégories.
+- **Analyse IA** : Traitement des réponses par des modèles d'IA pour générer des prédictions précises.
+- **Gestion des Catégories** : Organisation des prédictions par domaines (Santé, Business, Finance, etc.).
+- **Historique et Résultats** : Suivi complet des requêtes de prédiction et de leurs résultats.
+- **Système de Paiement** : Intégration pour la monétisation des services de prédiction.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Pile Technologique
 
-## Learning Laravel
+- **Framework** : [Laravel 11](https://laravel.com)
+- **Langage** : PHP 8.2+
+- **Base de données** : MySQL / PostgreSQL
+- **Outils** : Composer, Artisan, Vite
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 📂 Structure Core (Modèles)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Le projet est articulé autour des modèles suivants :
+- `Questionnaire` & `Question` : Système de collecte de données.
+- `PredictionCategory` : Classification des types de prédictions.
+- `PredictionRequest` : Demandes d'analyses soumises par les utilisateurs.
+- `Payment` : Suivi des transactions pour l'accès aux prédictions.
 
-## Laravel Sponsors
+## ⚙️ Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Cloner le dépôt**
+   ```bash
+   git clone git@github.com:GasyCoder/prediction-saas-ai.git
+   cd prediction-saas-ai
+   ```
 
-### Premium Partners
+2. **Installer les dépendances**
+   ```bash
+   composer install
+   npm install
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. **Configuration de l'environnement**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Contributing
+4. **Migrations & Base de données**
+   ```bash
+   # Configurez votre DB dans le fichier .env d'abord
+   php artisan migrate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. **Lancer le serveur**
+   ```bash
+   php artisan serve
+   ```
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📝 Licence
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Ce projet est sous licence MIT.
