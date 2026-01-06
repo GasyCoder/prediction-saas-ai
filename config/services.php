@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'fakepay' => [
+        'webhook_secret' => env('FAKEPAY_WEBHOOK_SECRET', 'change_me'),
+  ],
+
 ];
