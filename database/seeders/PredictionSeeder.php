@@ -64,5 +64,49 @@ class PredictionSeeder extends Seeder
         ['label'=>$opt['label'],'score'=>$opt['score']]
       );
     }
+
+    // Questionnaire Etudes
+    $studyQ = Questionnaire::updateOrCreate(
+      ['prediction_category_id' => $studies->id, 'version' => 1],
+      ['title' => 'Orientation Études v1', 'is_active' => true]
+    );
+
+    $sq1 = Question::updateOrCreate(
+      ['questionnaire_id' => $studyQ->id, 'key' => 'risk_tolerance'],
+      ['label' => 'Préférence pour les études longues', 'type' => 'scale', 'step' => 1, 'weight' => 2]
+    );
+
+    $sq2 = Question::updateOrCreate(
+      ['questionnaire_id' => $studyQ->id, 'key' => 'work_style'],
+      ['label' => 'Profil académique', 'type' => 'choice', 'step' => 1, 'weight' => 2]
+    );
+
+    foreach ([
+      ['value'=>'team','label'=>'Pratique / Technique','score'=>2],
+      ['value'=>'solo','label'=>'Théorique / Recherche','score'=>2],
+      ['value'=>'mixed','label'=>'Mixte','score'=>1],
+    ] as $opt) {
+      QuestionOption::updateOrCreate(
+        ['question_id'=>$sq2->id,'value'=>$opt['value']],
+        ['label'=>$opt['label'],'score'=>$opt['score']]
+      );
+    }
+
+    $sq3 = Question::updateOrCreate(
+      ['questionnaire_id' => $studyQ->id, 'key' => 'domain_interest'],
+      ['label' => 'Domaine d\'intérêt majeur', 'type' => 'choice', 'step' => 2, 'weight' => 3]
+    );
+
+    foreach ([
+      ['value'=>'tech','label'=>'Ingénierie','score'=>3],
+      ['value'=>'health','label'=>'Médecine','score'=>3],
+      ['value'=>'business','label'=>'Commerce','score'=>3],
+      ['value'=>'education','label'=>'Lettres / Sciences Humaines','score'=>2],
+    ] as $opt) {
+      QuestionOption::updateOrCreate(
+        ['question_id'=>$sq3->id,'value'=>$opt['value']],
+        ['label'=>$opt['label'],'score'=>$opt['score']]
+      );
+    }
   }
 }
